@@ -231,7 +231,7 @@ export default function Home() {
                     <td className='py-1 px-2 space-x-1 text-center' colSpan={4}>
                       <FontAwesomeIcon
                         icon={faSpinner}
-                        className='animate-spin'
+                        className='animate-spin max-h-6'
                       />
                       <span>Loading...</span>
                     </td>
@@ -244,6 +244,7 @@ export default function Home() {
             <div className='font-IBMPlex font-bold text-center text-xl md:text-2xl whitespace-nowrap'>
               สถิติการใช้งานเครื่องซักผ้า
             </div>
+
             <StatChart />
           </div>
         </div>
