@@ -77,26 +77,28 @@ export default function StatChart() {
     },
   ]
   return (
-    <ResponsiveContainer height={300} width={500}>
-      <BarChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-        className='font-IBMPlexLoop text-xs sm:text-sm'
-      >
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey='times' fill='#8884d8' />
-      </BarChart>
-    </ResponsiveContainer>
+    <div className='w-full'>
+      <ResponsiveContainer minHeight={300} width={'100%'}>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 0,
+            right: 0,
+            left: -30,
+            bottom: 0,
+          }}
+          className='font-IBMPlexLoop text-xs sm:text-sm'
+        >
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey='times' fill='#8884d8' />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   )
 }

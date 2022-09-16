@@ -177,11 +177,11 @@ export default function Home() {
         /> */}
       </Head>
 
-      <div className='w-full min-h-screen flex flex-col gap-3 justify-center items-center px-6'>
-        <span className='font-IBMPlex font-bold text-4xl pb-6'>
+      <div className='w-full min-h-screen flex flex-col gap-3 justify-center items-center px-6 py-8'>
+        <span className='font-IBMPlex font-bold text-4xl pb-4'>
           คิดจะซัก คิดถึง…
         </span>
-        <div className='flex flex-wrap items-start'>
+        <div className='flex flex-wrap gap-4 items-start justify-center'>
           <div className='flex flex-col justify-center gap-2'>
             <div className='flex justify-center items-center gap-2'>
               <div className='font-IBMPlex font-bold text-center text-xl md:text-2xl whitespace-nowrap'>
@@ -240,7 +240,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-          <div className='flex flex-col justify-center gap-2'>
+          <div className='flex flex-col w-full max-w-sm justify-center gap-2'>
             <div className='font-IBMPlex font-bold text-center text-xl md:text-2xl whitespace-nowrap'>
               สถิติการใช้งานเครื่องซักผ้า
             </div>
