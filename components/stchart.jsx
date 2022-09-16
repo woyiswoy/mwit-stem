@@ -13,63 +13,63 @@ export default function StatChart() {
   const data = [
     {
       name: '06:00',
-      times: 5,
+      times: 2,
     },
     {
       name: '07:00',
-      times: 10,
+      times: 6,
     },
     {
       name: '08:00',
-      times: 12,
+      times: 8,
     },
     {
       name: '09:00',
-      times: 9,
+      times: 5,
     },
     {
       name: '10:00',
-      times: 14,
+      times: 6,
     },
     {
       name: '11:00',
-      times: 13,
+      times: 7,
     },
     {
       name: '12:00',
-      times: 13,
+      times: 6,
     },
     {
       name: '13:00',
-      times: 14,
+      times: 8,
     },
     {
       name: '14:00',
-      times: 12,
+      times: 6,
     },
     {
       name: '15:00',
-      times: 13,
+      times: 4,
     },
     {
       name: '16:00',
-      times: 12,
+      times: 5,
     },
     {
       name: '17:00',
-      times: 14,
+      times: 7,
     },
     {
       name: '18:00',
-      times: 13,
+      times: 9,
     },
     {
       name: '19:00',
-      times: 11,
+      times: 7,
     },
     {
       name: '20:00',
-      times: 8,
+      times: 5,
     },
     {
       name: '21:00',
