@@ -4,6 +4,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import StatChart from '../components/stchart'
 
