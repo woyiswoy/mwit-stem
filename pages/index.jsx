@@ -207,7 +207,7 @@ export default function Home() {
                       className='border-b border-gray-300 hover:bg-gray-200/80 group transition-colors duration-200'
                     >
                       <td className='p-1 text-center'>เครื่องที่ {t.id}</td>
-                      {checkStatus(t) ? (
+                      {checkStatus(t.id) ? (
                         <td className='py-1 px-2 md:px-3 text-center bg-red-200 text-red-600 group-hover:bg-red-300 transition-colors duration-200 font-semibold flex gap-2 justify-center items-center text'>
                           <span className='whitespace-nowrap'>ทำงานอยู่</span>
                           <FontAwesomeIcon icon={faCircleXmark} className='' />
@@ -220,7 +220,7 @@ export default function Home() {
                       )}
 
                       <td className='p-1 text-right font-mono'>
-                        {getUpTime(t)}
+                        {getUpTime(t.id)}
                       </td>
 
                       <td className='p-1 text-right font-mono'>{t.avg}</td>
