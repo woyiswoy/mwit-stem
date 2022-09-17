@@ -9,60 +9,59 @@ import { useEffect, useState } from 'react'
 import StatChart from '../components/stchart'
 
 export default function Home() {
-  const [wmData, setWmData] = useState(false)
-  const [wmAll, setWmAll] = useState(false)
+  const wmData = []
   const [current, setCurrent] = useState(false)
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      fetch('/api/working', {
-        method: 'POST',
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          data.ok && setWmData(data.data)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }, 4000)
-    return () => {
-      clearInterval(timer)
-    }
-  }, [])
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     fetch('/api/working', {
+  //       method: 'POST',
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         data.ok && setWmData(data.data)
+  //       })
+  //       .catch((err) => {
+  //         console.log(err)
+  //       })
+  //   }, 4000)
+  //   return () => {
+  //     clearInterval(timer)
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    fetch('/api/getall', {
-      method: 'POST',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        data.ok && setWmAll(data.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+  // useEffect(() => {
+  //   fetch('/api/getall', {
+  //     method: 'POST',
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       data.ok && setWmAll(data.data)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
 
-    fetch('/api/working', {
-      method: 'POST',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        data.ok && setWmData(data.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+  //   fetch('/api/working', {
+  //     method: 'POST',
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       data.ok && setWmData(data.data)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }, [])
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(new Date())
-    }, 100)
-    return () => {
-      clearInterval(timer)
-    }
-  }, [])
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrent(new Date())
+  //   }, 100)
+  //   return () => {
+  //     clearInterval(timer)
+  //   }
+  // }, [])
 
   const checkStatus = (id) => {
     return wmData.filter((x) => x.id === id && x.work).length > 0
@@ -96,16 +95,6 @@ export default function Home() {
       const raw = current - new Date(getData(id).start)
       return toTimeString(raw)
     } else return ''
-  }
-
-  const getAvgTime = (id) => {
-    const pv = wmAll.filter((x) => x.id === id && !x.work)
-    if (pv.length > 0) {
-      const timeData = pv.map((x) => new Date(x.end) - new Date(x.start))
-      const raw = timeData.reduce((a, b) => a + b, 0) / timeData.length
-      return toTimeString(raw)
-    }
-    return '-'
   }
 
   const wmName = [
@@ -200,7 +189,7 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                {wmData && wmAll ? (
+                {wmData ? (
                   wmName.map((t, ti) => (
                     <tr
                       key={ti}
