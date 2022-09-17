@@ -54,14 +54,14 @@ export default function Home() {
   //     })
   // }, [])
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrent(new Date())
-  //   }, 100)
-  //   return () => {
-  //     clearInterval(timer)
-  //   }
-  // }, [])
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(new Date())
+    }, 100)
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
 
   const checkStatus = (id) => {
     return wmData.filter((x) => x.id === id && x.work).length > 0
